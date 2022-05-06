@@ -20,6 +20,7 @@ resource "proxmox_vm_qemu" "resource-name" {
     memory = 2048
     oncreate = true
     onboot = true
+    pool = "Projet-Infra"
     network {
         bridge    = "vmbr2"
         tag = 10
