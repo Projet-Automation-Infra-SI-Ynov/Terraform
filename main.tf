@@ -14,13 +14,15 @@ provider "proxmox" {
 }
 
 resource "proxmox_vm_qemu" "resource-name" {
-    name        = "NAME"
+    name        = "TESTIP"
     target_node = "factory"
     clone = "template-debian"
     memory = 2048
     oncreate = true
     onboot = true
     pool = "Projet-Infra"
+    agent = 1
+    #ipconfig0 = "ip=192.168.10.18/24,gw=192.168.10.254"
     network {
         bridge    = "vmbr2"
         tag = 10
@@ -29,8 +31,8 @@ resource "proxmox_vm_qemu" "resource-name" {
         model     = "virtio"
     }
     disk {
-    type = "virtio"
-    storage = "DATA"
-    size = "32G"
-  }
+      type = "virtio"
+      storage = "DATA"
+      size = "32G"
+    }
 }
