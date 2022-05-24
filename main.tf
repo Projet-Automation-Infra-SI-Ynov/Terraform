@@ -38,5 +38,5 @@ resource "proxmox_vm_qemu" "resource-name" {
 }
 
 output "instance_ips" {
-  value = ressource-name.*.default_ipv4_address
+  value = resource-name.*.default_ipv4_address
 }
