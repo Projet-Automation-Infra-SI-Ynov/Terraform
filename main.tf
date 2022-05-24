@@ -14,7 +14,7 @@ provider "proxmox" {
 }
 
 resource "proxmox_vm_qemu" "resource-name" {
-    name        = "Bastion"
+    name        = "NAME"
     target_node = "factory"
     clone = "Template"
     memory = 2048
