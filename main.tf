@@ -14,14 +14,14 @@ provider "proxmox" {
 }
 
 resource "proxmox_vm_qemu" "resource-name" {
-    name        = "NAME"
+    name        = "Bastion"
     target_node = "factory"
     clone = "Template"
     memory = 2048
     oncreate = true
     onboot = true
     pool = "Projet-Infra"
-    agent = 1
+    #agent = 1
     nameserver = "192.168.10.253"
     network {
         bridge    = "vmbr2"
