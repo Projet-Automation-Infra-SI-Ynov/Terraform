@@ -16,12 +16,12 @@ provider "proxmox" {
 resource "proxmox_vm_qemu" "resource-name" {
     name        = "NAME"
     target_node = "factory"
-    clone = "Template"
+    clone = "New-Template"
     memory = 2048
     oncreate = true
     onboot = true
     pool = "Projet-Infra"
-    #agent = 1
+    agent = 1
     nameserver = "192.168.10.253"
     network {
         bridge    = "vmbr2"
@@ -38,5 +38,5 @@ resource "proxmox_vm_qemu" "resource-name" {
 }
 
 output "instance_ips" {
-  value = resource-name.*.default_ipv4_address
+  value = proxmox_vm_qemu.resource-name.default_ipv4_address
 }
