@@ -16,7 +16,7 @@ provider "proxmox" {
 resource "proxmox_vm_qemu" "resource-name" {
     name        = "NAME"
     target_node = "factory"
-    clone = "template-debian"
+    clone = "Template"
     memory = 2048
     oncreate = true
     onboot = true
