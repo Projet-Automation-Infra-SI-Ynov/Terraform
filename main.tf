@@ -14,7 +14,7 @@ provider "proxmox" {
 }
 
 resource "proxmox_vm_qemu" "resource-name" {
-    name        = "TESTIP"
+    name        = "NAME"
     target_node = "factory"
     clone = "template-debian"
     memory = 2048
@@ -22,7 +22,7 @@ resource "proxmox_vm_qemu" "resource-name" {
     onboot = true
     pool = "Projet-Infra"
     agent = 1
-    #ipconfig0 = "ip=192.168.10.18/24,gw=192.168.10.254"
+    nameserver = "192.168.10.253"
     network {
         bridge    = "vmbr2"
         tag = 10
