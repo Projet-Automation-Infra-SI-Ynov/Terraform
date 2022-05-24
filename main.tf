@@ -36,3 +36,7 @@ resource "proxmox_vm_qemu" "resource-name" {
       size = "32G"
     }
 }
+
+output "instance_ips" {
+  value = ressource-name.*.default_ipv4_address
+}
